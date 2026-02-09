@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Hai scelto SÌ</title>
+</head>
+<body style="background:#f5e9d4; font-family:'Comic Sans MS'; text-align:center; padding:40px;">
+
+  <h1>Grazie per il tuo SÌ</h1>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCfZbwBc_2pkL3nTFzVR1c2ZsAZo1yZ4s",
+      authDomain: "nodozero-5x1000.firebaseapp.com",
+      databaseURL: "https://nodozero-5x1000-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "nodozero-5x1000",
+      storageBucket: "nodozero-5x1000.firebasestorage.app",
+      messagingSenderId: "938885804680",
+      appId: "1:938885804680:web:3ff76da61a24477b82253d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const siRef = ref(db, "scelte/si");
+
+    get(siRef).then((snapshot) => {
+      const current = snapshot.val() || 0;
+      set(siRef, current + 1).then(() => {
+        setTimeout(() => {
+          location.href = "index.html";
+        }, 800);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Come donare il 5x1000</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f7ecda, #e2cdb3);
+    padding: 20px;
+  }
+
+  /* Logo */
+  .logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  /* Balloon fumettistici */
+  .balloon {
+    background: #ffffffcc;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 3px solid #000;
+    font-size: 18px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  /* Vignette istruzioni */
+  .vignetta {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 3px solid #000;
+    margin-bottom: 15px;
+    font-size: 18px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  /* Codice fiscale */
+  .cf {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+    border: 3px solid #000;
+    border-radius: 12px;
+    background: #ffffffcc;
+    display: inline-block;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  /* Bottoni */
+  .buttons {
+    max-width: 400px;
+    margin: 30px auto;
+  }
+
+  .buttons a {
+    display: block;
+    background: #ffffffcc;
+    color: #000;
+    padding: 15px;
+    margin: 12px 0;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    font-weight: 700;
+  }
+
+  .buttons a:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  /* Omino finale */
+  .finale {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .omino-c {
+    width: 130px;
+    display: block;
+    margin: 0 auto 10px auto;
+    transform: rotate(-4deg);
+  }
+
+  /* Footer */
+  .footer-info {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+    color: #333;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+</style>
+</head>
+
+<body>
+
+  <img src="logo-nodo-zero.PNG" class="logo" alt="Nodo Zero">
+
+  <div class="balloon">
+    Grande scelta! Il tuo 5x1000 diventa un gesto che fa crescere Aurora – l’Emporio Solidale di Cocconato.
+  </div>
+
+  <div class="balloon">
+    E sostiene anche gli altri progetti che portano cura, dignità e possibilità nei piccoli territori.
+  </div>
+
+  <div class="vignetta">
+    Porta questo codice fiscale al CAF o al commercialista.
+  </div>
+
+  <div class="vignetta">
+    Inseriscilo nello spazio “Sostegno agli enti del Terzo Settore”.
+  </div>
+
+  <div class="vignetta">
+    Firma. È tutto qui. Un gesto semplice, un impatto reale.
+  </div>
+
+  <div style="text-align:center;">
+    <div class="cf">92084260055</div>
+  </div>
+
+  <div class="balloon">
+    Grazie davvero. Con questo gesto stai sostenendo famiglie, comunità e un modo diverso di stare insieme.
+  </div>
+
+  <div class="buttons">
+    <a href="#">Scarica il bigliettino</a>
+    <a href="#">Invialo a un amico</a>
+  </div>
+
+  <!-- SEZIONE FINALE CON OMINO-C E BALLOON -->
+  <div class="finale">
+    <img src="omino-c.PNG" alt="Omino che saluta" class="omino-c">
+
+    <div class="balloon" style="max-width: 350px; margin-top: 10px;">
+      Ci vediamo in Emporio!
+    </div>
+  </div>
+
+  <div class="footer-info">
+    Nodo Zero APS<br>
+    Sede legale: Strada Monferrato, 15A – Cocconato (AT) 14023<br>
+    Codice fiscale: 92084260055
+  </div>
+
+</body>
+</html>
