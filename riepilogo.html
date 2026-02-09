@@ -1,0 +1,91 @@
+</title><!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riepilogo scelte</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #fff8e8;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #222;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .top img {
+      width: 70px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .box {
+      background: #ffffff;
+      border: 2px solid #111;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 3px 3px 0 #111;
+      margin-bottom: 20px;
+    }
+    .count {
+      font-size: 20px;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 2px solid #111;
+      box-shadow: 3px 3px 0 #111;
+      font-size: 15px;
+      font-weight: 600;
+      background: #ffb703;
+      color: #111;
+      margin-right: 10px;
+    }
+    .btn.reset {
+      background: #ffffff;
+    }
+  </style>
+  <script>
+    function loadCounts() {
+      const si = localStorage.getItem("nz_si") || "0";
+      const no = localStorage.getItem("nz_no") || "0";
+      document.getElementById("count-si").textContent = si;
+      document.getElementById("count-no").textContent = no;
+    }
+    function resetCounts() {
+      localStorage.setItem("nz_si", "0");
+      localStorage.setItem("nz_no", "0");
+      loadCounts();
+      alert("Conteggi azzerati sul tuo dispositivo.");
+    }
+    window.addEventListener("DOMContentLoaded", loadCounts);
+  </script>
+</head>
+<body>
+
+  <div class="top">
+    <img src="logo-nodo-zero.png" alt="Nodo Zero" />
+    <h1>Riepilogo scelte</h1>
+  </div>
+
+  <div class="box">
+    <div class="count">SÌ: <span id="count-si">0</span></div>
+    <div class="count">NO: <span id="count-no">0</span></div>
+  </div>
+
+  <a href="index.html" class="btn">⬅️ Torna alla pagina principale</a>
+  <a href="#" class="btn reset" onclick="resetCounts()">Azzera conteggi</a>
+
+</body>
+</html>
+
