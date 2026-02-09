@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scarica il bigliettino</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f7ecda, #e2cdb3);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  /* Balloon fumettistico */
+  .balloon {
+    background: #ffffffcc;
+    padding: 18px;
+    border-radius: 15px;
+    border: 3px solid #000;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  /* Preview bigliettino */
+  .preview {
+    width: 90%;
+    max-width: 450px;
+    border: 3px solid #000;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 #000;
+    margin-bottom: 25px;
+  }
+
+  /* Bottone fumettistico */
+  .download-btn {
+    display: inline-block;
+    background: #ffffffcc;
+    color: #000;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.1s ease;
+  }
+
+  .download-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  /* Footer */
+  .footer-info {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+    color: #333;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="title">Scarica il bigliettino del 5x1000</div>
+
+  <div class="balloon">
+    Questo è il bigliettino ufficiale di Nodo Zero.  
+    Puoi stamparlo, condividerlo o portarlo al CAF.  
+    Ogni gesto aiuta la nostra comunità.
+  </div>
+
+  <!-- ANTEPRIMA DEL BIGLIETTINO -->
+  <img src="bigliettino-nodozero.jpg" alt="Bigliettino Nodo Zero" class="preview">
+
+  <!-- BOTTONE DI DOWNLOAD -->
+  <a href="bigliettino-nodozero.jpg" download class="download-btn">
+    Scarica il bigliettino
+  </a>
+
+  <div class="footer-info">
+    Nodo Zero APS<br>
+    Sede legale: Strada Monferrato, 15A – Cocconato (AT) 14023<br>
+    Codice fiscale: 92084260055
+  </div>
+
+</body>
+</html>
