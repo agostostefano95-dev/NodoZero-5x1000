@@ -273,12 +273,19 @@ body {
   }
 
   document.getElementById("btn-si").addEventListener("click", () => {
-    incrementChoice("si");
-  });
+  incrementChoice("si");
+  setTimeout(() => {
+    window.location.href = "si.html";
+  }, 300);
+});
 
-  document.getElementById("btn-no").addEventListener("click", () => {
-    incrementChoice("no");
-  });
+document.getElementById("btn-no").addEventListener("click", () => {
+  incrementChoice("no");
+  setTimeout(() => {
+    window.location.href = "no.html";
+  }, 300);
+});
+
 </script>
 
 </body>
